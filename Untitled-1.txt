@@ -1,0 +1,42 @@
+Assumptions:
+When attacking all troops attack
+the winner keeps all his troops while the loser loses them
+the heuristics is the sum of the heuristics of each city of my User 
+
+Logic class 
+Non Ai agents 
+Passive : finds the min of country.troops and add troops to them and doesnt attack
+Aggresive : put the bonus troops in max of country.tropps and the attack on the max country.troops of the other user in all of the countries 
+Semi-Passive : Put the bonus troops like the Passive but attacks in the min country.troops by searching in the adjacencies lists and fininding the neighbours to check whether we can attack or no 
+
+Data structures:
+Priority Queue: to know the heuristics and which state to go in.
+Arrays : to kput all the states in it 
+Set : to know whether i visited the state before or not
+
+The 4 AI agents are :
+1)Greedy agent: picks nove with best heuristic value. h(n) = number of enemytroops/numberofmytroops terroriterios
+P=  1x20+305=325
+    100x20+305=20350
+    10000x20+305=2000350
+
+
+2)A* agent: uses same heuristic ; difference is f(n) = g(n) + h(n) where g is the depth in tree
+p=  1x17+250=267
+    100x17+250=17250
+    10000x17+250=1700250
+
+
+3)Real Time A* agent: same as A* along with depth limiting feature and adjusting heuristics each time.
+p=  1x14+250=264
+    100x14+250=14250
+    10000x14+250=1400250
+
+4)Minimax agent: uses minimize and maximize functions along with pruning
+
+Search technique is up to the user to choose. Whenever an non human agent is used troops are distributed by random.
+
+
+Features:
+User interface is through a web based GUI
+Code is in JS

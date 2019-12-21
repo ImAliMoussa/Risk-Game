@@ -1,0 +1,82 @@
+<html>
+<head>
+<title></title>
+<style>
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+input[type=checkbox] {
+    color:white;
+    font-family: Consolas, Baskerville, 'Segoe UI', sans-serif;
+}
+</style>
+<META NAME="DESCRIPTION" CONTENT="">
+<META NAME="KEYWORDS" CONTENT="">
+
+<script type="text/javascript">
+function chkcontrol(j) {
+var total=0;
+for(var i=0; i < document.form1.ckb.length; i++){
+if(document.form1.ckb[i].checked){
+total =total +1;}
+if(total > 2){
+alert("Please Select only two") 
+document.form1.ckb[j].checked = false ;
+return false;
+}
+}
+}
+function startRisk(){
+    var total=0;
+    let player=[];
+    for(var i=0; i < document.form1.ckb.length; i++){
+        if(document.form1.ckb[i].checked){
+            player.push(i);
+        total =total +1;
+        }
+    }
+    if(total=2){
+        url = 'file:///C:/Users/Ahmad/Desktop/fayex/index.html?name=' + encodeURIComponent(player[0])+encodeURIComponent(player[1]);
+            document.location.href = url;
+        }
+        else{
+            alert("Please select 2 players");
+    }
+} 
+</script>
+</head>
+
+<body  topmargin=''0'';  background="risk.jpg" >
+
+	 <form name=form1 method=post action=check.php>
+<table border=''0'' width=''250'' cellspacing=''0'' cellpadding=''0'' align=center >
+
+
+        <div class="container">
+                <div class="center">
+<tr bgcolor='#ffffcc'><td > </td><td ><b>Users</b></td></tr>
+<tr bgcolor='#f1f1f1' ><td ><input type=checkbox name=ckb value=1 onclick='chkcontrol(0)';></td><td >Player</td></tr>
+<tr bgcolor='#ffffff' ><td ><input type=checkbox name=ckb value=2 onclick='chkcontrol(1)';></td><td >Passive</td></tr>
+<tr bgcolor='#f1f1f1' ><td ><input type=checkbox name=ckb value=3 onclick='chkcontrol(2)';></td><td >Aggressive</td></tr>
+<tr bgcolor='#ffffff' ><td ><input type=checkbox name=ckb value=4 onclick='chkcontrol(3)';></td><td >Semi-Passive</td></tr>
+<tr bgcolor='#f1f1f1' ><td ><input type=checkbox name=ckb value=5 onclick='chkcontrol(4)';></td><td >Realtime-aStar</td></tr>
+<tr bgcolor='#ffffff' ><td ><input type=checkbox name=ckb value=6 onclick='chkcontrol(5)';></td><td >aStar</td></tr>
+<tr bgcolor='#f1f1f1' ><td ><input type=checkbox name=ckb value=7 onclick='chkcontrol(6)';></td><td >Greedy</td></tr>
+<tr bgcolor='#ffffff' ><td ><input type=checkbox name=ckb value=8 onclick='chkcontrol(7)';></td><td >Min-Max</td></tr>
+</table>
+<button type="button" margin="auto" onclick='startRisk()';>Play!</button>
+</div>
+</div>
+</form>
+</body>
+</html>

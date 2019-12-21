@@ -1,0 +1,10 @@
+path {
+  opacity: 0.4;
+}
+
+.map-container {
+  margin: auto;
+  height: 600px;
+  width: fit-content;
+  /* background-color: black; */
+}
